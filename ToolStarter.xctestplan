@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "id": "EB1BD7F5-3AA6-4698-9EA6-4B815AF08197",
+      "name": "Local StoreKit",
+      "options": {}
+    }
+  ],
+  "defaultOptions": {
+    "storeKitConfiguration": "ToolStarter.storekit",
+    "targetForVariableExpansion": {
+      "containerPath": "container:ToolStarter.xcodeproj",
+      "identifier": "1E001355DE5A630DB51509DA",
+      "name": "ToolStarter"
+    }
+  },
+  "testTargets": [
+    {
+      "parallelizable": false,
+      "target": {
+        "containerPath": "container:ToolStarter.xcodeproj",
+        "identifier": "48647D3592C2F77967DA3D78",
+        "name": "ToolStarterTests"
+      }
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,69 @@
+name: ToolStarter
+options:
+  developmentLanguage: en
+  postGenCommand: python3 tools/sync-test-plan.py
+  deploymentTarget:
+    iOS: '17.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1,2'
+    CODE_SIGNING_ALLOWED: NO
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    INFOPLIST_KEY_CFBundleDisplayName: ToolStarter
+    INFOPLIST_KEY_UISupportedInterfaceOrientations: 'UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight'
+    MARKETING_VERSION: '1.0'
+    CURRENT_PROJECT_VERSION: '1'
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: NO
+targets:
+  ToolStarter:
+    type: application
+    platform: iOS
+    sources: [App]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.toolstarter
+  ToolStarterTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests
+      - path: ToolStarter.storekit
+        buildPhase: resources
+    dependencies:
+      - target: ToolStarter
+      - sdk: StoreKitTest.framework
+  ToolStarterUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: ToolStarter
+schemes:
+  ToolStarter:
+    build:
+      targets:
+        ToolStarter: all
+        ToolStarterTests: [test]
+        ToolStarterUITests: [test]
+    run:
+      storeKitConfiguration: ToolStarter.storekit
+    test:
+      parallelizeBuild: false
+      testPlans:
+        - path: ToolStarter.xctestplan
+          defaultPlan: true
+  ToolStarterScreenshots:
+    build:
+      targets:
+        ToolStarter: all
+        ToolStarterUITests: [test]
+    run:
+      storeKitConfiguration: ToolStarter.storekit
+    test:
+      targets:
+        - name: ToolStarterUITests
+          parallelizable: false

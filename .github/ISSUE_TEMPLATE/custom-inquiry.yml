@@ -1,0 +1,57 @@
+name: Custom inquiry / 定制询盘
+description: Ask about a scoped custom build based on this sample（基于本样品的定制范围询盘）
+title: "[Custom] "
+labels: ["custom-inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repo is a **sample**. Describe what you need; we reply by email.
+        本仓是**样品**。说明需求后我们邮件回复。**不要**在 Issue 里写真实客户名、单位名、密钥或身份证等敏感信息。
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario / 场景（一句话）
+      description: What problem should the custom build solve?
+      placeholder: e.g. Real restaurant takeout with WeChat pay and kitchen printer
+    validations:
+      required: true
+  - type: textarea
+    id: must_have
+    attributes:
+      label: Must-have screens / admin / 必做页面与后台
+      description: List pages, roles, admin features
+    validations:
+      required: true
+  - type: checkboxes
+    id: extras
+    attributes:
+      label: Likely extras / 可能加项
+      options:
+        - label: Real payment（真支付）
+        - label: Printer / kitchen display（打印/厨显）
+        - label: Multi-store（多门店）
+        - label: Branding / design（品牌换皮）
+        - label: App Store / Mini Program submit（上架协助）
+        - label: Other（说明写在下面）
+  - type: input
+    id: timeline
+    attributes:
+      label: Desired timeline / 期望工期
+      placeholder: e.g. 2–3 weeks MVP / 先试点一店
+    validations:
+      required: false
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email / 联系邮箱
+      description: We reply here. WeChat only after email reply if needed（公开仓不留微信号）.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Other notes / 补充
+      description: Links to wireframes, competitors, constraints. No secrets.
+    validations:
+      required: false

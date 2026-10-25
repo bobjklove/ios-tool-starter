@@ -1,0 +1,44 @@
+{
+  "identifier": "com.example.toolstarter.local",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "3.99",
+      "familyShareable": false,
+      "internalID": "tool-starter-lifetime",
+      "localizations": [
+        {
+          "description": "Unlimited PDF exports",
+          "displayName": "Full access",
+          "locale": "en_US"
+        },
+        {
+          "description": "无限次导出 PDF",
+          "displayName": "完整版",
+          "locale": "zh_CN"
+        },
+        {
+          "description": "PDFを無制限に書き出し",
+          "displayName": "完全版",
+          "locale": "ja_JP"
+        }
+      ],
+      "productID": "com.example.toolstarter.unlock",
+      "referenceName": "Lifetime",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "",
+    "_developerTeamID": "",
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_timeRate": 0
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
