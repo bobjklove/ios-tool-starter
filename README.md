@@ -1,3 +1,5 @@
+![ios-tool-starter](docs/ios-tool-starter.png)
+
 # ios-tool-starter
 
 SwiftUI + StoreKit2 starter for a simple iOS utility. SwiftUI+StoreKit2 工具脚手架样品。
